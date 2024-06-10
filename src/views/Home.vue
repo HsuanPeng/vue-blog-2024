@@ -2,7 +2,9 @@
   <div class="home">
     <section class="home-articles">
       <article v-for="article in articles">
-        <h3>{{ article.title | subTitle }}</h3>
+        <h3 @click="routerToArticle(article.id)">
+          {{ article.title | subTitle }}
+        </h3>
         <i>{{ article.body }}</i>
       </article>
     </section>
@@ -28,6 +30,11 @@ export default {
   filters: {
     subTitle(value) {
       return value.substring(0, 20);
+    },
+  },
+  methods: {
+    routerToArticle(id) {
+      this.$router.push({ name: "Article", params: { id } });
     },
   },
 };
