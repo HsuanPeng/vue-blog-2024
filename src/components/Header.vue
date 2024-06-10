@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-    <div class="title">Lisa's Blog</div>
+    <router-link to="/" class="title">Lisa's Blog</router-link>
     <div class="header-right">
       <div class="nav-item">
         <router-link to="/">Home</router-link>
@@ -19,6 +19,8 @@
 .title {
   color: white;
   font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 .nav {
   display: flex;

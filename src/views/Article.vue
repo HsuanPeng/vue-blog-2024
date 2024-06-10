@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="article">
     <h3>{{ article.title }}</h3>
-    <div>{{ article.body }}</div>
+    <div class="article-body">{{ article.body }}</div>
   </div>
 </template>
 
@@ -31,3 +31,18 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+
+  .article-body {
+    margin-top: 1rem;
+    text-align: left;
+  }
+}
+</style>

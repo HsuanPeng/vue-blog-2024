@@ -56,6 +56,7 @@ export default {
       height: 200px;
       background-color: #dddddd;
       border-radius: 16px;
+      text-align: left;
 
       h3 {
         cursor: pointer;
