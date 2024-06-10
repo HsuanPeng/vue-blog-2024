@@ -8,11 +8,15 @@
         <i>{{ article.body }}</i>
       </article>
     </section>
+    <section>
+      <Sidebar :articles="articles" />
+    </section>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   name: "HomeView",
@@ -37,22 +41,29 @@ export default {
       this.$router.push({ name: "Article", params: { id } });
     },
   },
+  components: {
+    Sidebar,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
   display: flex;
+  padding: 1rem;
+  gap: 1rem;
 
   .home-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
     article {
       display: flex;
       padding-left: 2rem;
       justify-content: center;
-      margin: 1rem;
       flex-direction: column;
       align-items: flex-start;
-      width: 75vw;
       height: 200px;
       background-color: #dddddd;
       border-radius: 16px;
@@ -75,12 +86,6 @@ export default {
         padding-right: 1.5rem;
       }
     }
-  }
-
-  .home-side-bar {
-    width: 25vw;
-    padding: 1rem;
-    height: calc(100vh - 56px);
   }
 }
 </style>
