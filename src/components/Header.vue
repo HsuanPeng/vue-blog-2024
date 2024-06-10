@@ -3,8 +3,9 @@
     <div class="title">Lisa's Blog</div>
     <div class="header-right">
       <div class="nav-item">
-        <div>Home</div>
-        <div>About</div>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/login">Login</router-link>
       </div>
       <form role="search">
         <input type="search" placeholder="Search" aria-label="Search" />
@@ -24,7 +25,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #404040;
+  background-color: #2e2e2e;
 }
 
 .header-right {
@@ -39,6 +40,11 @@
   color: aliceblue;
   cursor: pointer;
   gap: 20px;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
 }
 
 .header-right form {

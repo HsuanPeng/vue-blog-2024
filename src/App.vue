@@ -6,17 +6,10 @@
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
 import Header from "@/components/Header.vue";
 
 export default {
-  data() {
-    return {
-      msgTest: "Welcome to Your Vue.js App Lisa is Testing dddd",
-    };
-  },
   components: {
-    HelloWorld,
     Header,
   },
 };
