@@ -10,19 +10,14 @@ import axios from "axios";
 
 export default {
   mounted() {
-    this.fetchArticle();
+    const articleId = this.$route.params.id;
+    const api = "https://jsonplaceholder.typicode.com/posts?id=" + articleId;
+    axios.get(api).then((response) => {
+      this.article = response.data[0];
+    });
   },
   watch: {
     "$route.params.id": "fetchArticle",
-  },
-  methods: {
-    fetchArticle() {
-      const articleId = this.$route.params.id;
-      const api = "https://jsonplaceholder.typicode.com/posts?id=" + articleId;
-      axios.get(api).then((response) => {
-        this.article = response.data[0];
-      });
-    },
   },
   data() {
     return {

@@ -7,6 +7,7 @@ import Login from "../views/Login.vue";
 import Admin from "../views/Admin.vue";
 import Add from "../views/Admin/Add.vue";
 import NotFound404 from "../views/NotFound404.vue";
+import AdminHome from "../views/Admin/AdminHome.vue";
 
 Vue.use(VueRouter);
 
@@ -39,7 +40,7 @@ const routes = [
       {
         path: "/",
         name: "Admin-Home",
-        component: Admin,
+        component: AdminHome,
       },
       {
         path: "add",

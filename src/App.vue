@@ -9,6 +9,9 @@
 import Header from "@/components/Header.vue";
 
 export default {
+  mounted() {
+    this.$store.dispatch("fetchArticles");
+  },
   components: {
     Header,
   },

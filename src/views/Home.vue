@@ -15,22 +15,11 @@
 </template>
 
 <script>
-import axios from "axios";
 import Sidebar from "@/components/Sidebar.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "HomeView",
-  mounted() {
-    const api = "https://jsonplaceholder.typicode.com/posts";
-    axios.get(api).then((response) => {
-      this.articles = response.data;
-    });
-  },
-  data() {
-    return {
-      articles: [],
-    };
-  },
   filters: {
     subTitle(value) {
       return value.substring(0, 20);
@@ -40,6 +29,9 @@ export default {
     routerToArticle(id) {
       this.$router.push({ name: "Article", params: { id } });
     },
+  },
+  computed: {
+    ...mapState(["articles"]),
   },
   components: {
     Sidebar,
