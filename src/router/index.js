@@ -47,6 +47,11 @@ const routes = [
         name: "Admin-Add",
         component: Add,
       },
+      {
+        path: "edit/:id",
+        name: "Admin-Edit",
+        component: Add,
+      },
     ],
   },
   {
