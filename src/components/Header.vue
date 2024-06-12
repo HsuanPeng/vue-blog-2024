@@ -8,12 +8,43 @@
         <router-link to="/login">Login</router-link>
       </div>
       <form role="search">
-        <input type="search" placeholder="Search" aria-label="Search" />
-        <button type="submit">Search</button>
+        <input
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          v-model="searchKey"
+        />
+        <button type="submit" @click="submitSearchKey">Search</button>
       </form>
     </div>
   </nav>
 </template>
+
+<script>
+import { mapActions } from "vuex";
+
+export default {
+  data() {
+    return {
+      searchKey: "",
+    };
+  },
+  methods: {
+    ...mapActions(["changeSearchKey"]),
+
+    submitSearchKey: function () {
+      this.changeSearchKey(this.searchKey);
+    },
+  },
+  watch: {
+    searchKey: function () {
+      if (this.searchKey === "") {
+        this.submitSearchKey(this.searchKey);
+      }
+    },
+  },
+};
+</script>
 
 <style scoped>
 .title {

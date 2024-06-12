@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <section class="home-articles">
-      <article v-for="article in articles">
+      <article v-for="article in filterBySearchKey">
         <h3 @click="routerToArticle(article.id)">
           {{ article.title | subTitle }}
         </h3>
@@ -16,7 +16,7 @@
 
 <script>
 import Sidebar from "@/components/Sidebar.vue";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "HomeView",
@@ -32,6 +32,7 @@ export default {
   },
   computed: {
     ...mapState(["articles"]),
+    ...mapGetters(["filterBySearchKey"]),
   },
   components: {
     Sidebar,
